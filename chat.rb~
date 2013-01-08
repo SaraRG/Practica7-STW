@@ -1,11 +1,10 @@
 # coding: utf-8
 require 'sinatra'
-set server: 'thin', connections: {}
+set server: 'thin', connections: []
 
 get '/' do
-  path = File.dirname(__FILE__)
-  halt erb(:login) if params[:user].nil?
-  erb :chat, locals: { user: params[:user], path: path }
+  halt erb(:login) unless params[:user]
+  erb :chat, locals: { user: params[:user].gsub(/\W/, '') }
 end
 
 get '/stream/:user', provides: 'text/event-stream' do

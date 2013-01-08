@@ -1,3 +1,17 @@
+<div class="span3">
+	<div id="users" class="well sidebar-nav">
+	</div>
+</div>
+<div class="span9">
+	<div id="chat" class="hero-unit" style="overflow: auto; height: 300px;">
+	</div>
+	<div class="row-fluid">
+		<form>
+			<input id='msg' placeholder='type message here...' />
+	    	</form>
+	</div>
+</div>
+
 <script>
 
 	// reading
